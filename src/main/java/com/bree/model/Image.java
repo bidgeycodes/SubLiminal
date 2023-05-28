@@ -7,8 +7,8 @@ public class Image {
     public int imageId;
     public String imageUrl;
 
-    public Image() {
-    }
+    // empty constructor
+    public Image() {}
 
     public Image(int imageId, String imageUrl) {
         this.imageId = imageId;
@@ -26,7 +26,6 @@ public class Image {
     public void setImageId(int imageId) {
         this.imageId = imageId;
     }
-
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
