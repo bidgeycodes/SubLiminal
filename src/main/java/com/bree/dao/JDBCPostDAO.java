@@ -68,7 +68,6 @@ public class JDBCPostDAO implements PostDAO {
     }
 
     public List<Post> orderPostsByLocation() {
-        List<Post> postsByLocation
         return null;
     }
 
