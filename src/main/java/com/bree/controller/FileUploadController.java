@@ -16,6 +16,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+    @CrossOrigin
     @RestController
     @RequestMapping("/api/images")
     public class FileUploadController {

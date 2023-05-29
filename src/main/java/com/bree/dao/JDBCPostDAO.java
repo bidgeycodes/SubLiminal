@@ -5,8 +5,6 @@ import com.bree.model.Post;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
-
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,21 +20,16 @@ public class JDBCPostDAO implements PostDAO {
 
     @Override
     public List<Image> getImagesForPostByPostId(int image_id) {
-        List<Image> images = new ArrayList<Image>();
+        List<Image> images = new ArrayList<>();
         String query = "SELECT post_id FROM post " +
                 "JOIN image ON image.post_id = post.post_id " +
                 "WHERE image_id = ?";
         SqlRowSet result = jdbcTemplate.queryForRowSet(query, image_id);
         while (result.next()) {
-            Post post = mapRowToPost(result);
-            post.add(post);
+            Image image = mapRowToPost(result);
+            images.add(image);
         }
         return images;
-    }
-
-    @Override
-    public HashMap<Post, List<String>> getPostsWithImagesByPostId() {
-        return null;
     }
 
     @Override
@@ -48,7 +41,7 @@ public class JDBCPostDAO implements PostDAO {
         SqlRowSet result = jdbcTemplate.queryForRowSet(query, post_id);
         while (result.next()) {
             Post post = mapRowToPost(result);
-            post.add(post);
+            postsDesc.add(post);
         }
         return postsDesc;
     }
@@ -62,7 +55,7 @@ public class JDBCPostDAO implements PostDAO {
         SqlRowSet result = jdbcTemplate.queryForRowSet(query, post_id);
         while (result.next()) {
             Post post = mapRowToPost(result);
-            post.add(post);
+            postsAsc.add(post);
         }
         return postsAsc;
     }

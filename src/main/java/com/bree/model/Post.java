@@ -63,6 +63,4 @@ public class Post {
     public void setPostDescription(String postDescription) {
         this.postDescription = postDescription;
     }
-
-    public void add(Post post) {}
 }

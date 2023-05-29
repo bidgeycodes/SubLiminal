@@ -1,15 +1,15 @@
+
 package com.bree.dao;
 
-
 import com.bree.model.Image;
+import com.bree.model.Post;
 
-import java.util.HashMap;
 import java.util.List;
 
 public interface ImageDAO {
 
-    HashMap<String, String> images();
+    List<Image> getImagesForPostByPostId(int postId);
 
-
+    List<Image> getAllSiteImages();
 
 }

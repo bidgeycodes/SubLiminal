@@ -9,9 +9,7 @@ import java.util.List;
 
 public interface PostDAO {
 
-    List<Image> getImagesForPostByPostId(int post_id);
-
-    HashMap<Post, List<String>> getPostsWithImagesByPostId();
+    List<Image> getImagesForPostByPostId(int image_id);
 
     List<Post> orderPostsDescByDate(int post_id);
 

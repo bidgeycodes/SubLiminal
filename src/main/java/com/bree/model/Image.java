@@ -26,6 +26,7 @@ public class Image {
     public void setImageId(int imageId) {
         this.imageId = imageId;
     }
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }

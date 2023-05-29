@@ -4,21 +4,18 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <h1>SubLiminal</h1>
-      <nav>
+    <nav class="navigation-wrapper">
+      <ul>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/addContent">Add Content</RouterLink>
-      </nav>
+      </ul>
+    </nav>
   </header>
-  <div>
-    <p>Eventually there will be content here.</p>
-  </div>
-
   <RouterView />
 </template>
 
-<style scoped>
+<!-- <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -80,4 +77,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-</style>
+</style> -->
