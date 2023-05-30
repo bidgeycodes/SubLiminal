@@ -1,22 +1,21 @@
 <!-- ParentComponent -->
 <template>
-    <div class="submitted-content">
-      <AddContent :form-data="formData" @submit="handleSubmit"></AddContent>
-      <div v-if="submitted">
-        <h2>Submitted Data:</h2>
-        <pre>{{ formData }}</pre>
-      </div>
-    </div>
-  </template>
-  
-  <script>  
+  <div class="submitted-content">
+    <AddContent v-model:form-data="formData" @submit="handleSubmit"></AddContent>
 
+    <div v-if="submitted">
+      <h2>Submitted Data:</h2>
+      <pre>{{ formData }}</pre>
+    </div>
+  </div>
+</template>
+  
+<script>
   import AddContent from './AddContent.vue'
 
   export default {
-
     components: {
-        AddContent
+      AddContent,
     },
     data() {
       return {
@@ -35,5 +34,5 @@
       },
     },
   };
-  </script>
+</script>
   
