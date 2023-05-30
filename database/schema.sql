@@ -2,6 +2,7 @@ BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS "user";
 
 CREATE TABLE post (
 	post_id SERIAL,
@@ -17,6 +18,13 @@ CREATE TABLE image (
 	image_url VARCHAR(200) UNIQUE,
 	post_id INT,
 	CONSTRAINT FK_image_post FOREIGN KEY (post_id) REFERENCES post (post_id)
+);
+
+CREATE TABLE "user" (
+	user_id SERIAL,
+	username VARCHAR(20),
+	user_password VARCHAR(50),
+	CONSTRAINT PK_user_id PRIMARY KEY (user_id)
 );
 
 COMMIT;
