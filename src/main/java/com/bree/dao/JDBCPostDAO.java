@@ -19,20 +19,6 @@ public class JDBCPostDAO implements PostDAO {
     }
 
     @Override
-    public List<Image> getImagesForPostByPostId(int image_id) {
-        List<Image> images = new ArrayList<>();
-        String query = "SELECT post_id FROM post " +
-                "JOIN image ON image.post_id = post.post_id " +
-                "WHERE image_id = ?";
-        SqlRowSet result = jdbcTemplate.queryForRowSet(query, image_id);
-        while (result.next()) {
-            Image image = mapRowToPost(result);
-            images.add(image);
-        }
-        return images;
-    }
-
-    @Override
     public List<Post> orderPostsDescByDate(int post_id) {
         List<Post> postsDesc = new ArrayList<>();
         String query = "SELECT post_date FROM post " +
@@ -68,7 +54,6 @@ public class JDBCPostDAO implements PostDAO {
     private Post mapRowToPost(SqlRowSet row) {
         Post post = new Post();
         post.setPostId(row.getInt("post_id"));
-
         return post;
     }
 }

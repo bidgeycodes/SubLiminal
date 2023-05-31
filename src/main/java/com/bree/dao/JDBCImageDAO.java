@@ -17,11 +17,12 @@ public class JDBCImageDAO implements ImageDAO {
     }
 
     @Override
-    public List<Image> getImagesForPostByPostId(int post_id) {
+    public List<Image> getImagesForPostByPostId(int postId) {
         List<Image> images = new ArrayList<>();
-        String query = "SELECT image_id FROM image " +
-                "WHERE post_id = ?";
-        SqlRowSet result = jdbcTemplate.queryForRowSet(query, post_id);
+        String query = "SELECT post_id FROM post " +
+                "JOIN image ON image.post_id = post.post_id " +
+                "WHERE image_id = ?";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(query, postId);
         while (result.next()) {
             Image image = mapRowToImage(result);
             images.add(image);
