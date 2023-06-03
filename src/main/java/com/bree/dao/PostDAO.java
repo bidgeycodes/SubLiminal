@@ -9,7 +9,9 @@ import java.util.List;
 
 public interface PostDAO {
 
-    List<Post> getAllSitePostsAndDetails();
+    List<Post> getAllSitePostsAndDetails(int postId);
+
+    List<Post> getPostByPostId(int postId);
 
     List<Post> orderPostsDescByDate(int postId);
 

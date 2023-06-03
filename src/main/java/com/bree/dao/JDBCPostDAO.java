@@ -21,7 +21,11 @@ public class JDBCPostDAO implements PostDAO {
         List<Post> allPosts = new ArrayList<>();
         String query = "SELECT * FROM post ";
         SqlRowSet result = jdbcTemplate.queryForRowSet(query);
-        return null;
+        while (result.next()) {
+            Post post = mapRowToPost(result);
+            allPosts.add(post);
+        }
+        return allPosts;
     }
 
 
