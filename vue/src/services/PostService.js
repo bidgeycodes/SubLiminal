@@ -9,6 +9,5 @@ export default {
     getPost(id){
         return axios.get(`/posts/post/${id}`);
     },
-
     
 }

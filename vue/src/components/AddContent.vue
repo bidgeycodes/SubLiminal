@@ -8,8 +8,11 @@
       <label for="postLocation">Post Location:</label>
       <input type="text" id="postLocation" v-model="localFormData.postLocation" required />
 
+      <label for="postExist">Does Post Exist?</label>
+      <input type="checkbox" id="postExist" v-model="localFormData.postExist" required />
+
       <label for="postDate">Post Date:</label>
-      <input type="text" id="postDate" v-model="localFormData.postDate" required />
+      <input type="date" id="postDate" v-model="localFormData.date" required />
 
       <label for="postDescription">Post Description:</label>
       <input type="text" id="postDescription" v-model="localFormData.postDescription" required />

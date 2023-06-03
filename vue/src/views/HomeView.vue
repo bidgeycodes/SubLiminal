@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>SubLiminal</h1>
+    <h1>SubLiminal 超現実的</h1>
   </header>
   <div>
     <PostViewDropdown />

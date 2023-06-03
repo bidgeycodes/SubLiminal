@@ -22,7 +22,8 @@
         formData: {
           postName: "",
           postLocation: "",
-          postDate: "",
+          postExist: "",
+          date: "",
           postDescription: "",
         },
         submitted: false,
