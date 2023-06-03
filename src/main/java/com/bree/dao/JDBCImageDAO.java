@@ -1,7 +1,6 @@
 package com.bree.dao;
 
 import com.bree.model.Image;
-import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -21,7 +20,7 @@ public class JDBCImageDAO implements ImageDAO {
         List<Image> images = new ArrayList<>();
         String query = "SELECT post_id FROM post " +
                 "JOIN image ON image.post_id = post.post_id " +
-                "WHERE image_id = ?";
+                "WHERE image_id = ? ";
         SqlRowSet result = jdbcTemplate.queryForRowSet(query, postId);
         while (result.next()) {
             Image image = mapRowToImage(result);
@@ -30,6 +29,7 @@ public class JDBCImageDAO implements ImageDAO {
         return images;
     }
 
+    @Override
     public List<Image> getAllSiteImages() {
         List<Image> allImages = new ArrayList<>();
         String query = "SELECT image_url FROM image ";
@@ -44,7 +44,7 @@ public class JDBCImageDAO implements ImageDAO {
     private Image mapRowToImage(SqlRowSet row) {
         Image image = new Image();
         image.setImageUrl(row.getString("image_url"));
-
+        image.setImageId(row.getInt("image_id"));
         return image;
     }
 }

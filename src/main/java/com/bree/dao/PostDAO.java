@@ -9,9 +9,12 @@ import java.util.List;
 
 public interface PostDAO {
 
-    List<Post> orderPostsDescByDate(int post_id);
+    List<Post> getAllSitePostsAndDetails();
 
-    List<Post> orderPostsAscByDate(int post_id);
+    List<Post> orderPostsDescByDate(int postId);
 
-    List<Post> orderPostsByLocation();
+    List<Post> orderPostsAscByDate(int postId);
+
+    List<Post> orderPostsByLocation(int postId);
+
 }

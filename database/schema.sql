@@ -9,6 +9,7 @@ CREATE TABLE post (
 	post_name VARCHAR(50),
 	post_location VARCHAR(50) NOT NULL,
 	post_date DATE NOT NULL,
+	post_exist BOOLEAN NOT NULL,
 	post_description VARCHAR(3000) NOT NULL,
 	CONSTRAINT PK_post_id PRIMARY KEY (post_id)
 );

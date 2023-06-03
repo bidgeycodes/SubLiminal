@@ -8,6 +8,7 @@ public class Post {
     public int postId;
     public String postName;
     public Date postDate;
+    public boolean postExist;
     public String postLocation;
     public String postDescription;
 
@@ -16,10 +17,11 @@ public class Post {
     public Post() {
     }
 
-    public Post(int postId, String postName, Date postDate, String postLocation, String postDescription) {
+    public Post(int postId, String postName, Date postDate, boolean postExist, String postLocation, String postDescription) {
         this.postId = postId;
         this.postName = postName;
         this.postDate = postDate;
+        this.postExist = postExist;
         this.postLocation = postLocation;
         this.postDescription = postDescription;
     }
@@ -32,9 +34,9 @@ public class Post {
         return postName;
     }
 
-    public Date getPostDate() {
-        return postDate;
-    }
+    public Date getPostDate() {return postDate;}
+
+    public boolean doesPostExist() {return postExist;}
 
     public String getPostLocation() {
         return postLocation;
@@ -54,6 +56,10 @@ public class Post {
 
     public void setPostDate(Date postDate) {
         this.postDate = postDate;
+    }
+
+    public void setPostExist(boolean postExist) {
+        this.postExist = postExist;
     }
 
     public void setPostLocation(String postLocation) {
