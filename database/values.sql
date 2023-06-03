@@ -35,9 +35,3 @@ FROM image
 
 DELETE FROM post
 WHERE post_id = 6;
-
-TRUNCATE image CASCADE;
-TRUNCATE post CASCADE;
-
-select *
-from image

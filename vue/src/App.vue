@@ -4,14 +4,34 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
     <nav class="nav-wrapper">
       <ul class="nav">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/addContent">Add Content</RouterLink>
+        <li><RouterLink to="/">Home</RouterLink></li>
+        <li><RouterLink to="/about">About</RouterLink></li>
+        <li><RouterLink to="/addContent">Add Content</RouterLink></li>
       </ul>
     </nav>
-  </header>
   <RouterView />
 </template>
+
+<style scoped>
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: auto;
+}
+.nav {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  margin-right: 1vw;
+  font-size: 1em;
+}
+
+</style>

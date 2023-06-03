@@ -1,6 +1,6 @@
 <template>
     <div>
-      <label for="order-selector">Order entries:</label>
+      <label for="order-selector">Order entries by: </label>
       <select id="order-selector" v-model="orderSelector">
         <option value="descending">Descending</option>
         <option value="ascending">Ascending</option>
@@ -18,3 +18,11 @@
     },
   };
   </script>
+
+  <style scoped>
+
+    #order-selector {
+      padding: 0.5vh, 0.5vh, 0.5vh, 0.5vh;
+    }
+
+  </style>
