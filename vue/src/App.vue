@@ -16,6 +16,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 
+body {
+  background-image: url('/assets/background1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .nav-wrapper {
   display: flex;
   flex-direction: row;

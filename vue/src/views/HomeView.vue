@@ -1,7 +1,7 @@
 <template>
-  <header>
-    <h1>Sub<em>Liminal</em></h1>
-    <h2>ちょうげんじつしゅぎてき</h2>
+    <header>
+      <h1>Sub<em>Liminal</em></h1>
+      <h2>ちょうげんじつしゅぎてき</h2>
     </header>
     <div class="dropdown-container">
     <PostViewDropdown />
@@ -23,7 +23,6 @@ export default {
 </script>
 
 <style scoped>
-
 header {
   display: flex;
   justify-content: center;
@@ -52,7 +51,7 @@ h2 {
   font-size: 1.75em;
   letter-spacing: 1vw;
   margin-top: -4vh;
-  color: #a6acaf;
+  color: #b8c997;
   z-index: 1;
 }
 

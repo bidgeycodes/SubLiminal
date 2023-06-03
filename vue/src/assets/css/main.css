@@ -1,6 +1,15 @@
 
 * {
     font-family: 'Asap Condensed', sans-serif;
-    background-color: black;
+    background-color: transparent;
     color: white;
+}
+
+#app {
+    background-image: url('src/assets/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
 }
