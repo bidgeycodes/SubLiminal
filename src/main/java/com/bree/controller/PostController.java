@@ -15,13 +15,4 @@ import java.util.List;
         @Autowired
         public PostDAO postDAO;
 
-        @RequestMapping(path = "/posts", method = RequestMethod.GET)
-        public List<Post> getAllSitePostsAndDetails(@PathVariable int postId) {
-        return postDAO.getPostByPostId(postDAO.getPostByPostId(postId))
-    }
-
-        @RequestMapping(path = "/posts/post", method = RequestMethod.GET)
-        public List<Post> getPost() {
-            return postDAO.getGenres();
-        }
 }

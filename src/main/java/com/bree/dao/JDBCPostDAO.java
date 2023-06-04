@@ -17,7 +17,7 @@ public class JDBCPostDAO implements PostDAO {
     }
 
     @Override
-    public List<Post> getAllSitePostsAndDetails() {
+    public List<Post> getAllSitePostsAndDetails(int postId) {
         List<Post> allPosts = new ArrayList<>();
         String query = "SELECT * FROM post ";
         SqlRowSet result = jdbcTemplate.queryForRowSet(query);
@@ -28,6 +28,11 @@ public class JDBCPostDAO implements PostDAO {
         return allPosts;
     }
 
+    public Post getPostByPostId(int postId) {
+        Post postById;
+        String query = "SELECT post_id FROM post ";
+        SqlRowSet result = jdbcTemplate.queryForObject(query, postId, Post.class);
+    }
 
     @Override
     public List<Post> orderPostsDescByDate(int postId) {

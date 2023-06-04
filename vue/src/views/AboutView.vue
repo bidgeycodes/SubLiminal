@@ -74,6 +74,7 @@ h3 {
 
 .text {
   font-size: 1.27em;
+  line-height: 3vh;
 }
 
 .liminal {
