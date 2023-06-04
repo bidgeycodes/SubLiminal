@@ -13,7 +13,7 @@
         feelings of apprehension and uneasiness, but also a surreal and comforting aura. It wasn't until I encountered the concept of a <span class="liminal">
         liminal space </span> that I could put a name to these enigmatic experiences. I had been straddling the metaphysical boundary between the
         familiar yet unfamiliar, the temporality of time and space, the abandoned past and an unknown future.</p>
-        <p class="text">The images in this collection are years worth of encounters in spaces unsettling enough for me to reach for my phone and
+        <p class="text">The images in this collection are years worth of encountering spaces unsettling enough to propel me to reach for my phone and
         document them. All images were captured very unprofessionally via an iPhone camera, without editing by yours truly unless otherwise
         noted.</p>
         <p class="text">Thank you to everyone who pushed me and supported me in this project, especially those who said, "yeah, that seems cool."</p>
@@ -73,13 +73,13 @@ h3 {
 }
 
 .text {
-  font-size: 1.27em;
+  font-size: 1.20em;
   line-height: 3vh;
 }
 
 .liminal {
   font-style: italic;
-  color:#486059;
+  color: #a6b688;
 }
 
 </style>

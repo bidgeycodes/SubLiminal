@@ -51,7 +51,7 @@ h2 {
   font-size: 1.75em;
   letter-spacing: 1vw;
   margin-top: -4vh;
-  color: #b8c997;
+  color: gray;
   z-index: 1;
 }
 
