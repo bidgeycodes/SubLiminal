@@ -12,6 +12,20 @@ public class Post {
     public String postLocation;
     public String postDescription;
 
+    public boolean isPostExist() {
+        return postExist;
+    }
+
+    public Image getPostImage() {
+        return postImage;
+    }
+
+    public void setPostImage(Image postImage) {
+        this.postImage = postImage;
+    }
+
+    public Image postImage;
+
 
     // empty constructor
     public Post() {

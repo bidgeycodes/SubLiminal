@@ -6,17 +6,19 @@
     <div class="dropdown-container">
     <PostViewDropdown />
     </div>
-    <div>
-    <p>Eventually there will be content here.</p>
-  </div>
+    <div class="post-container">
+      <PostComponent />
+    </div>
 </template>
 
 <script>
 import PostViewDropdown from '../components/PostViewDropdown.vue';
+import PostComponent from '../components/PostComponent.vue';
 
 export default {
   components: {
     PostViewDropdown,
+    PostComponent,
   },
 };
 
@@ -51,7 +53,7 @@ h2 {
   font-size: 1.75em;
   letter-spacing: 1vw;
   margin-top: -4vh;
-  color: gray;
+  color: #b4c0b6;
   z-index: 1;
 }
 
@@ -61,6 +63,12 @@ h2 {
   align-items: center;
   height: 15vh;
   width: 100%;
+}
+
+.post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>

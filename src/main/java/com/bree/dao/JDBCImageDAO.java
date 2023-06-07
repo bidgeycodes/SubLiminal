@@ -3,10 +3,12 @@ package com.bree.dao;
 import com.bree.model.Image;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JDBCImageDAO implements ImageDAO {
 
     private final JdbcTemplate jdbcTemplate;

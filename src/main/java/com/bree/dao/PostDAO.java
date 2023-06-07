@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface PostDAO {
 
-    List<Post> getAllSitePostsAndDetails(int postId);
+    Post addPostObject(Post post);
 
     Post getPostByPostId(int postId);
 

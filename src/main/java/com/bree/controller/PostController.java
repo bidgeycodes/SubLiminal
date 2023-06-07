@@ -15,4 +15,14 @@ import java.util.List;
         @Autowired
         public PostDAO postDAO;
 
+        @GetMapping("/posts")
+        public List<Post> posts() {
+            return postDAO.getAllSitePostsAndDetails();
+        }
+
+        @PostMapping("/posts")
+        public Post post(@RequestBody Post post) {
+            return postDAO.addPostObject(post);
+        }
+
 }

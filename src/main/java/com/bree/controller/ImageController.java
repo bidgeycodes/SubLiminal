@@ -18,8 +18,8 @@ public class ImageController {
     @Autowired
     public PostDAO postDAO;
 
-    @RequestMapping(path = "/posts/post/{id}", method= RequestMethod.GET)
-    public List<Image> postImages(int postId) {
-        return imageDAO.getImagesForPostByPostId(postImages(postId));
-    }
+//    @RequestMapping(path = "/posts/post/{id}", method= RequestMethod.GET)
+//    public List<Image> postImages(int postId) {
+//        return imageDAO.getImagesForPostByPostId(postImages(postId));
+//    }
 }
