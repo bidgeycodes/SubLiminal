@@ -1,7 +1,7 @@
 <!-- ParentComponent -->
 <template>
   <div class="submitted-content">
-    <AddContent v-model:form-data="formData" @submit="handleSubmit"></AddContent>
+    <AddContent v-model:form-data="formData" @submit.prevent="handleSubmit"></AddContent>
 
     <div v-if="submitted">
       <h2>Submitted Data:</h2>
@@ -11,6 +11,7 @@
 </template>
   
 <script>
+  import PostService from '../services/PostService';
   import AddContent from './AddContent.vue'
 
   export default {
@@ -23,7 +24,7 @@
           postName: "",
           postLocation: "",
           postExist: "",
-          date: "",
+          postDate: "",
           postDescription: "",
         },
         submitted: false,
@@ -32,6 +33,16 @@
     methods: {
       handleSubmit() {
         this.submitted = true;
+        
+      PostService.postNewPost(this.formData).then((response) => {
+        if (response.status != 200) {
+          alert("unsuccess")
+          return;
+        } else {
+          alert("yep")
+          return;
+        }
+      })
       },
     },
   };
