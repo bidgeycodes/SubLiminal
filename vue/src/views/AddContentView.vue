@@ -1,6 +1,6 @@
 <template>
-  <div class='add-content'>
-    <p>Add content to database:</p>
+  <div id="add-content">
+    <p class="text-content">Add content to database:</p>
     <SubmittedContent />
   </div>
 </template>
@@ -14,4 +14,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+#add-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text-content {
+  display: flex;
+  justify-content: center;
+  font-size: 4em;
+  margin-bottom: 2%;
+}
+
+</style>
 

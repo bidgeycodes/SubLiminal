@@ -6,21 +6,43 @@
     <div class="dropdown-container">
     <PostViewDropdown />
     </div>
-    <div class="post-container">
-      <PostComponent />
+    <div class="post-wrapper">
+      <div class="post-container" v-for="(post, index) in posts" :key="index">
+        <PostComponent v-bind:post-data="post"/>
+      </div>
     </div>
 </template>
 
 <script>
 import PostViewDropdown from '../components/PostViewDropdown.vue';
 import PostComponent from '../components/PostComponent.vue';
+import PostService from '../services/PostService';
 
 export default {
   components: {
     PostViewDropdown,
     PostComponent,
   },
-};
+  methods: {
+    fetchPostData() {
+    PostService.getAllPosts()
+      .then(response => {
+        this.posts = response.data
+      })
+      .catch(error => {
+        console.error('Error fetching post data:', error);
+      });
+    },
+  },
+  created() {
+    this.fetchPostData()
+  },
+  data() {
+    return {
+      posts: [],
+    };
+  },
+}
 
 </script>
 
@@ -61,7 +83,15 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 15vh;
+  height: 10vh;
+  width: 100%;
+}
+
+.post-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
   width: 100%;
 }
 
@@ -69,6 +99,12 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  opacity: 0.75;
+  width: 50%;
+  padding: 1rem;
 }
+
+
 
 </style>

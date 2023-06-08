@@ -1,6 +1,6 @@
 <!-- ParentComponent -->
 <template>
-  <div class="submitted-content">
+  <div id="submitted-content">
     <AddContent v-model:form-data="formData" @submit.prevent="handleSubmit"></AddContent>
 
     <div v-if="submitted">
@@ -21,10 +21,10 @@
     data() {
       return {
         formData: {
-          postName: "",
+          postTitle: "",
           postLocation: "",
-          postExist: "",
           postDate: "",
+          postExist: "",
           postDescription: "",
         },
         submitted: false,
@@ -48,3 +48,6 @@
   };
 </script>
   
+<style scoped>
+
+</style>

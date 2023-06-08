@@ -1,14 +1,13 @@
 <!-- Parent Component -->
 <template>
-    <div class="wrapper">
         <div class="post">
-            <h3 class="title-text">Title</h3>
-            <h4 class="location-text">Location</h4>
-            <h3 class="date-text">Date Taken:</h3>
+            <h3 class="title-text" v-bind:title="postTitle">{{ postTitle }}</h3>
+            <h4 class="location-text" v-bind:location="postLocation">{{ postLocation }}</h4>
+            <h3 class="date-text" v-bind:date="postDate">{{ postDate }}</h3>
+            <h2 class="exist-text" v-bind:exist="postExist">{{ postExist }}</h2>
             <PostImagesComponent />
-            <p class="description-text">This will be a post description. It will be a lot longer with a "see more" once it reaches its limit.</p>
+            <p class="description-text" v-bind:description="postDescription">{{ postDescription }}</p>
         </div>
-    </div>
 </template>
 
 <script>
@@ -19,32 +18,23 @@ export default {
     components: {
       PostImagesComponent,
     },
+    props: {
+        postData: {
+            type: Object,
+                postTitle: "",
+                postLocation: "",
+                postDate: "",
+                postExist: "",
+                postDescription: "",
+            },
+        },
     data() {
     },
-}
+};
+
 </script>
 
 <style scoped>
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  min-height: 50vh;
-  width: 50vw;
-  padding: 1rem;
-}
-
-.post {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: inline-block;
-  background-color: black;
-  opacity: 0.75;
-  width: 50%;
-  padding: 1rem;
-}
 
 .title-text {
     font-family: 'Kosugi Maru', sans-serif;
