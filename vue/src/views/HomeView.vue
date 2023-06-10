@@ -1,19 +1,16 @@
 <template>
-  <div class="header">
-    <header class="page-title">
+    <header>
       <h1>Sub<em>Liminal</em></h1>
       <h2>ちょうげんじつしゅぎてき</h2>
     </header>
     <div class="dropdown-container">
       <PostViewDropdown />
     </div>
-  </div>
     <div class="post-wrapper">
       <div class="post-container" v-for="(post, index) in posts" :key="index">
         <PostComponent v-bind:post-data="post"/>
       </div>
-    </div>
-
+      </div>
 </template>
 
 <script>
@@ -50,14 +47,18 @@ export default {
 </script>
 
 <style scoped>
-header {
+
+.page-title, .dropdown-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-content: flex-start;
   display: inline-block;
   width: 100%;
-  padding-bottom: -8vh;
+  display: fixed;
+  overflow-y: auto;
+  z-index: 100;
+
 }
 
 h1, h2 {

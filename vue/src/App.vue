@@ -24,9 +24,6 @@ import { RouterLink, RouterView } from 'vue-router'
   background-size: cover;
   background-position: center;
 } */
-.nav-wrapper {
-  position: relative;
-}
 
 nav {
   display: flex;
@@ -36,6 +33,8 @@ nav {
   font-family: 'Space Mono', monospace;
   text-transform: uppercase;
   list-style: none;
+  position: fixed;
+  overflow-y: auto;
 }
 
 li {

@@ -16,6 +16,10 @@ body {
     padding: 0;
 }
 
+#app {
+    position: relative;
+}
+
 /* #app {
     background-repeat: no-repeat;
     background-size: cover;
