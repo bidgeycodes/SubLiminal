@@ -86,7 +86,7 @@ public class JDBCPostDAO implements PostDAO {
     public Post addPostObject(Post post) {
        String query = "INSERT INTO post (post_name, post_location, post_exist, post_date, post_description)" +
                " VALUES ( ?, ?, ?, ?, ?) RETURNING post_id";
-       int postId = jdbcTemplate.queryForObject(query, Integer.class, post.getPostName(), post.getPostLocation(), post.isPostExist(), post.getPostDate(), post.getPostDescription());
+       int postId = jdbcTemplate.queryForObject(query, Integer.class, post.getPostTitle(), post.getPostLocation(), post.isPostExist(), post.getPostDate(), post.getPostDescription());
        post.setPostId(postId);
        return post;
     }
@@ -96,7 +96,7 @@ public class JDBCPostDAO implements PostDAO {
     private Post mapRowToPost(SqlRowSet row) {
         Post post = new Post();
         Image image = new Image();
-        post.setPostName(row.getString("post_name"));
+        post.setPostTitle(row.getString("post_name"));
         post.setPostId(row.getInt("post_id"));
         post.setPostDate(row.getDate("post_date"));
         post.setPostLocation(row.getString("post_location"));

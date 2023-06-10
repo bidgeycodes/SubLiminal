@@ -1,16 +1,19 @@
 <template>
-    <header>
+  <div class="header">
+    <header class="page-title">
       <h1>Sub<em>Liminal</em></h1>
       <h2>ちょうげんじつしゅぎてき</h2>
     </header>
     <div class="dropdown-container">
-    <PostViewDropdown />
+      <PostViewDropdown />
     </div>
+  </div>
     <div class="post-wrapper">
       <div class="post-container" v-for="(post, index) in posts" :key="index">
         <PostComponent v-bind:post-data="post"/>
       </div>
     </div>
+
 </template>
 
 <script>
@@ -91,20 +94,19 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: auto;
   width: 100%;
+  gap: 3rem;
 }
 
 .post-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: black;
   opacity: 0.75;
-  width: 50%;
-  padding: 1rem;
+  width: 45%;
+  border: solid transparent;
+  background-clip: padding-box;
 }
-
-
 
 </style>

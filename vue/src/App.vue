@@ -4,32 +4,35 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-    <nav class="nav-wrapper">
-      <ul class="nav">
+  <div class="nav-wrapper">
+    <nav>
+      <ul class="site-nav">
         <li><RouterLink to="/">Home</RouterLink></li>
         <li><RouterLink to="/about">About</RouterLink></li>
         <li><RouterLink to="/addContent">Gallery</RouterLink></li>
       </ul>
     </nav>
   <RouterView />
+  </div>
 </template>
 
 <style scoped>
 
-body {
+/* body {
   background-image: url('/assets/background1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+} */
+.nav-wrapper {
+  position: relative;
 }
 
-.nav-wrapper {
+nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   height: auto;
-}
-.nav {
   font-family: 'Space Mono', monospace;
   text-transform: uppercase;
   list-style: none;
@@ -37,7 +40,7 @@ body {
 
 li {
   display: inline-block;
-  margin-right: 1vw;
+  margin-right: 1.5vw;
   font-size: 1em;
 }
 

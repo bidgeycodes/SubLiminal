@@ -1,12 +1,11 @@
 package com.bree.model;
 
 import java.sql.Date;
-import java.util.List;
 
 public class Post {
 
     public int postId;
-    public String postName;
+    public String postTitle;
     public Date postDate;
     public boolean postExist;
     public String postLocation;
@@ -31,9 +30,9 @@ public class Post {
     public Post() {
     }
 
-    public Post(int postId, String postName, Date postDate, boolean postExist, String postLocation, String postDescription) {
+    public Post(int postId, String postTitle, Date postDate, boolean postExist, String postLocation, String postDescription) {
         this.postId = postId;
-        this.postName = postName;
+        this.postTitle = postTitle;
         this.postDate = postDate;
         this.postExist = postExist;
         this.postLocation = postLocation;
@@ -44,8 +43,8 @@ public class Post {
         return postId;
     }
 
-    public String getPostName() {
-        return postName;
+    public String getPostTitle() {
+        return postTitle;
     }
 
     public Date getPostDate() {return postDate;}
@@ -64,8 +63,8 @@ public class Post {
         this.postId = postId;
     }
 
-    public void setPostName(String postName) {
-        this.postName = postName;
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
     }
 
     public void setPostDate(Date postDate) {
