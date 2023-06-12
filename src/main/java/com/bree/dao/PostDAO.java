@@ -15,7 +15,7 @@ public interface PostDAO {
 
     List<Post> getAllSitePostsAndDetails();
 
-    boolean doesPostExist(boolean postId);
+    boolean doesPostExist(int postId);
 
     List<Post> orderPostsDescByDate(int postId);
 

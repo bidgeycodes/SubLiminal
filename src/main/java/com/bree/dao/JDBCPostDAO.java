@@ -38,7 +38,14 @@ public class JDBCPostDAO implements PostDAO {
     }
 
     @Override
-    public boolean doesPostExist(boolean postId) {
+    public boolean doesPostExist(int postId) {
+        String query = "SELECT post_exist FROM post " +
+                "WHERE post_id = ? ";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(query, postId);
+        if (result.next()) {
+            boolean postExist = result.getBoolean("post_exist");
+            return postExist;
+        }
         return false;
     }
 
