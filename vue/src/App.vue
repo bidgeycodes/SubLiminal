@@ -33,8 +33,11 @@ nav {
   font-family: 'Space Mono', monospace;
   text-transform: uppercase;
   list-style: none;
-  position: fixed;
   overflow-y: auto;
+}
+
+.site-nav {
+  position: fixed;
 }
 
 li {
