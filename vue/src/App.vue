@@ -12,8 +12,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <li><RouterLink to="/addContent">Gallery</RouterLink></li>
       </ul>
     </nav>
-  <RouterView />
   </div>
+  <RouterView />
 </template>
 
 <style scoped>
