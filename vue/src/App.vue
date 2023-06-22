@@ -1,49 +1,34 @@
-
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
-  <div class="nav-wrapper">
-    <nav>
-      <ul class="site-nav">
-        <li><RouterLink to="/">Home</RouterLink></li>
-        <li><RouterLink to="/about">About</RouterLink></li>
-        <li><RouterLink to="/addContent">Gallery</RouterLink></li>
-      </ul>
-    </nav>
-  </div>
-  <RouterView />
+  <NavComponent />
 </template>
 
-<style scoped>
+<script>
+import NavComponent from './components/NavComponent.vue';
+import PostService from './services/PostService';
 
-/* body {
-  background-image: url('/assets/background1.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-} */
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: auto;
-  font-family: 'Space Mono', monospace;
-  text-transform: uppercase;
-  list-style: none;
-  overflow-y: auto;
+export default {
+  components: {
+    NavComponent,
+},
+  methods: {
+    fetchPostData() {
+    PostService.getAllPosts()
+      .then(response => {
+        this.posts = response.data
+      })
+      .catch(error => {
+        console.error('Error fetching post data:', error);
+      });
+    },
+  },
+  created() {
+    this.fetchPostData()
+  },
+  data() {
+    return {
+      posts: [],
+    };
+  },
 }
 
-.site-nav {
-  position: fixed;
-}
-
-li {
-  display: inline-block;
-  margin-right: 1.5vw;
-  font-size: 1em;
-}
-
-</style>
+</script>

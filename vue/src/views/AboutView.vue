@@ -1,9 +1,9 @@
 <template>
-  <div class="about-container">
+  <div class="page-container">
     <h2>About</h2>
     <h3>あばうと</h3>
   </div>
-  <div class="page-container">
+  <div class="about-container">
     <div class="image-container">
     <img src="@/assets/IMG_5149.jpg" class="img">
     </div>
@@ -23,7 +23,7 @@
 
 <style scoped>
 
-.about-containter {
+.page-containter {
   max-width: 40%;
   height: auto;
 }
@@ -45,7 +45,7 @@ h3 {
   z-index: 1;
 }
 
-.page-container {
+.about-container {
   display: flex;
   justify-content: center;
   flex-direction: row-reverse;

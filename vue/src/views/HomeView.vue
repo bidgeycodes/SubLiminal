@@ -1,19 +1,19 @@
 <template>
-    <header>
-      <h1>Sub<em>Liminal</em></h1>
-      <h2>ちょうげんじつしゅぎてき</h2>
-    </header>
-    <div class="dropdown-container">
-      <PostViewDropdown />
-    </div>
-    <div class="post-wrapper">
-      <div class="post-container" v-for="(post, index) in posts" :key="index">
-        <PostComponent v-bind:post-data="post"/>
+  <div class="home-view">
+    <NavComponent />
+      <LogoTitle />
+        <PostViewDropdown />
+        <div class="post-wrapper">
+         <div class="post-container" v-for="(post, index) in posts" :key="index">
+          <PostComponent v-bind:post-data="post"/>
+        </div>
       </div>
-      </div>
+  </div>
 </template>
 
 <script>
+import NavComponent from '../components/NavComponent.vue';
+import LogoTitle from '../components/LogoTitle.vue';
 import PostViewDropdown from '../components/PostViewDropdown.vue';
 import PostComponent from '../components/PostComponent.vue';
 import PostService from '../services/PostService';
@@ -22,7 +22,9 @@ export default {
   components: {
     PostViewDropdown,
     PostComponent,
-  },
+    LogoTitle,
+    NavComponent,
+},
   methods: {
     fetchPostData() {
     PostService.getAllPosts()
@@ -47,59 +49,6 @@ export default {
 </script>
 
 <style scoped>
-
-.page-title, .dropdown-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-content: flex-start;
-  display: inline-block;
-  width: 100%;
-  display: fixed;
-  overflow-y: auto;
-  z-index: 100;
-
-}
-
-h1, h2 {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0;
-}
-
-h1 {
-  font-size: 6em;
-  font-weight: bold;
-  letter-spacing: 2.5vw;
-  margin-top: -0.5vh;
-}
-
-h2 {
-  font-family: 'Tsukimi Rounded', sans-serif;
-  font-size: 1.75em;
-  letter-spacing: 1vw;
-  margin-top: -4vh;
-  color: #b4c0b6;
-  z-index: 1;
-}
-
-.dropdown-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  width: 100%;
-}
-
-.post-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: auto;
-  width: 100%;
-  gap: 3rem;
-}
 
 .post-container {
   display: flex;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="dropdown-wrapper">
       <label for="order-selector">Order entries by: </label>
       <select id="order-selector" v-model="orderSelector">
         <option value="descending">Descending</option>
@@ -21,8 +21,11 @@
 
   <style scoped>
 
-    #order-selector {
-      padding: 0.5vh, 0.5vh, 0.5vh, 0.5vh;
+    .dropdown-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+      padding-bottom: 8vh;
     }
 
   </style>
