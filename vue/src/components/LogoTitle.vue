@@ -21,10 +21,9 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: auto;
   width: 100%;
   overflow-y: auto;
-  z-index: 1;
+  z-index: 0;
 }
 
 h1, h2 {

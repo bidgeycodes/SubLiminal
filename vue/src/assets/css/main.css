@@ -11,14 +11,14 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Make the background image fixed */
+    background-attachment: fixed; 
     margin: 0;
-    padding: 0;
+    padding-top: 3vh;
 }
 
-/* #app {
+#app {
     position: relative;
-} */
+} 
 
 /* #app {
     background-repeat: no-repeat;

@@ -32,10 +32,12 @@ nav {
     text-transform: uppercase;
     list-style: none;
     overflow-y: auto;
+    width: 100%;
   }
   
   .site-nav {
     position: fixed;
+    height: 4vh;
   }
   
   li {

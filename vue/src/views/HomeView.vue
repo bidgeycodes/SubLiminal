@@ -2,7 +2,7 @@
   <div class="home-view">
     <NavComponent />
       <LogoTitle />
-        <PostViewDropdown />
+       <PostViewDropdown />
         <div class="post-wrapper">
          <div class="post-container" v-for="(post, index) in posts" :key="index">
           <PostComponent v-bind:post-data="post"/>
@@ -50,9 +50,18 @@ export default {
 
 <style scoped>
 
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .post-container {
   display: flex;
+  justify-content: center;
   background-color: black;
+  margin: 1rem;
   opacity: 0.75;
   width: 45%;
   border: solid transparent;

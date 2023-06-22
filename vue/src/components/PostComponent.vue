@@ -40,6 +40,7 @@ export default {
 
 .post {
     width: 100%;
+    justify-content: center;
 }
 
 .location-date-text {
@@ -73,7 +74,5 @@ export default {
     flex-direction: row-reverse;
     margin: 0;
 }
-
-
 
 </style>

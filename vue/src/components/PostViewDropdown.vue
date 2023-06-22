@@ -26,6 +26,6 @@
       justify-content: center;
       gap: 0.5em;
       padding-bottom: 8vh;
-    }
+      }
 
   </style>
