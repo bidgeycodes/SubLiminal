@@ -1,8 +1,8 @@
 <template>
   <div class="home-view">
     <NavComponent />
-    <LogoTitle class="fixed fixed-logo-title" />
-    <PostViewDropdown class="fixed fixed-post-view-dropdown" />
+      <LogoTitle />
+       <PostViewDropdown />
         <div class="post-wrapper">
          <div class="post-container" v-for="(post, index) in posts" :key="index">
           <PostComponent v-bind:post-data="post"/>
@@ -49,20 +49,6 @@ export default {
 </script>
 
 <style scoped>
-
-.fixed {
-  position: fixed;
-  left: 0;
-  z-index: 100;
-}
-
-.fixed-logo-title {
-  top: 0;
-}
-
-.fixed-post-view-dropdown {
-  top: 60px;
-}
 
 .post-wrapper {
   display: flex;
