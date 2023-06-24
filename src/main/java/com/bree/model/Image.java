@@ -1,7 +1,5 @@
 package com.bree.model;
 
-import java.sql.Date;
-
 public class Image {
 
     public int imageId;

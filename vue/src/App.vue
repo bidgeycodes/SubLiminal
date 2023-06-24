@@ -1,5 +1,6 @@
 <template>
   <NavComponent />
+  <RouterView />
 </template>
 
 <script>

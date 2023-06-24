@@ -1,16 +1,17 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink,  } from 'vue-router'
 </script>
 
 <template>
     <nav>
-      <ul class="site-nav">
-        <li><RouterLink to="/">Home</RouterLink></li>
-        <li><RouterLink to="/about">About</RouterLink></li>
-        <li><RouterLink to="/addContent">Gallery</RouterLink></li>
-      </ul>
+      <div class="nav-content">
+        <ul class="site-nav">
+          <li><RouterLink to="/">Home</RouterLink></li>
+          <li><RouterLink to="/about">About</RouterLink></li>
+          <li><RouterLink to="/addContent">Gallery</RouterLink></li>
+        </ul>
+      </div>
     </nav>
-  <RouterView />
 </template>
 
 <script>
@@ -23,8 +24,12 @@ export default {
 
 
 <style scoped>
-
 nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+.nav-content {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -33,12 +38,10 @@ nav {
     list-style: none;
     overflow-y: auto;
     width: 100%;
-  }
-  
-  .site-nav {
-    position: fixed;
     height: 4vh;
   }
+  
+ 
   
   li {
     display: inline-block;

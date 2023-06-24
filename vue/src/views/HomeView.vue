@@ -1,60 +1,53 @@
 <template>
   <div class="home-view">
-    <NavComponent />
-      <LogoTitle />
-       <PostViewDropdown />
-        <div class="post-wrapper">
-         <div class="post-container" v-for="(post, index) in posts" :key="index">
-          <PostComponent v-bind:post-data="post"/>
-        </div>
+    <HeroContent />
+    <div class="post-wrapper">
+      <div class="post-container" v-for="(post, index) in posts" :key="index">
+        <PostComponent v-bind:post-data="post" />
       </div>
+    </div>
   </div>
 </template>
 
 <script>
-import NavComponent from '../components/NavComponent.vue';
-import LogoTitle from '../components/LogoTitle.vue';
-import PostViewDropdown from '../components/PostViewDropdown.vue';
-import PostComponent from '../components/PostComponent.vue';
-import PostService from '../services/PostService';
+import PostComponent from '../components/PostComponent.vue'
+import HeroContent from '../components/HeroContent.vue'
+import PostService from '../services/PostService'
 
 export default {
   components: {
-    PostViewDropdown,
     PostComponent,
-    LogoTitle,
-    NavComponent,
-},
+    HeroContent
+  },
   methods: {
     fetchPostData() {
-    PostService.getAllPosts()
-      .then(response => {
-        this.posts = response.data
-      })
-      .catch(error => {
-        console.error('Error fetching post data:', error);
-      });
-    },
+      PostService.getAllPosts()
+        .then((response) => {
+          this.posts = response.data
+        })
+        .catch((error) => {
+          console.error('Error fetching post data:', error)
+        })
+    }
   },
   created() {
     this.fetchPostData()
   },
   data() {
     return {
-      posts: [],
-    };
-  },
+      posts: []
+    }
+  }
 }
-
 </script>
 
 <style scoped>
-
 .post-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 300px;
 }
 
 .post-container {
@@ -67,5 +60,4 @@ export default {
   border: solid transparent;
   background-clip: padding-box;
 }
-
 </style>
